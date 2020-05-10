@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = ".;pb";
+
+package grpc.golang;
+
+message OAuthRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message OAuthResponse {
+    string token = 1;
+}
+
+service OAuthService {
+    rpc Login (OAuthRequest) returns (OAuthResponse) {};
+}
